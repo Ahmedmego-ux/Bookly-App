@@ -2,8 +2,11 @@ import 'package:booklyapp/Features/splash/presentation/views/widgets/splash_viwe
 import 'package:flutter/material.dart';
 
 class SplashView extends StatelessWidget{
+  const SplashView({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return SplashViweBody();
+    return Scaffold( 
+      body: SplashViweBody());
   }
 }
