@@ -1,10 +1,34 @@
+import 'package:booklyapp/Features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:booklyapp/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
- class SplashViweBody extends StatelessWidget{
+ class SplashViweBody extends StatefulWidget{
   const SplashViweBody({super.key});
 
+  @override
+  State<SplashViweBody> createState() => _SplashViweBodyState();
+}
+
+
+class _SplashViweBodyState extends State<SplashViweBody> with SingleTickerProviderStateMixin{
+  late AnimationController animationController;
+  late Animation <Offset>slidinganimation;
+  @override
+  void initState() {
+   
+    super.initState();
+    animationController=AnimationController(vsync: this,duration: Duration(seconds: 1));
+    slidinganimation =Tween<Offset>(begin: Offset(0, 2),end: Offset.zero).animate(animationController);
+    animationController.forward();
+
+  }
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    animationController.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -13,15 +37,15 @@ import 'package:flutter_svg/svg.dart';
       
       children: [
         SvgPicture.asset(Assetsdata.logo,
-        color: Colors.white,
-        height: 60,width: 100,),
-         const SizedBox(height: 6,),
+        height: 60,width: 100,color: Colors.white,),
+    
+         const SizedBox(height:6,),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal:70),
-          child: const Text('Read Free Books',
-          textAlign:TextAlign.end,),
+          child: SlidingText(slidinganimation: slidinganimation),
         ),
       ],
     );
   }
- }
+}
+
