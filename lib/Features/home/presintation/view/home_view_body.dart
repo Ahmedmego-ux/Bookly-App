@@ -7,10 +7,25 @@ class HomeViewBody extends StatelessWidget{
     return Column(
       children: [
         const AppBarBody(),
-        CustomeListViewItem(),
+        FeaturedBooksListView()
       ],
     );
   }
+}
+class FeaturedBooksListView extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+  return SizedBox(
+    height:  MediaQuery.of(context).size.height*0.28,
+    child: ListView.builder(
+     // itemCount: 10,
+      scrollDirection: Axis.horizontal,
+      itemBuilder:(context,Index){
+      return CustomeListViewItem();
+    }),
+  );
+  }
+  
 }
 
 
