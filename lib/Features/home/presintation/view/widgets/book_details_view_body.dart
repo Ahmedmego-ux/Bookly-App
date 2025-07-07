@@ -1,6 +1,8 @@
+import 'package:booklyapp/Features/home/presintation/view/widgets/book_rating.dart';
 import 'package:booklyapp/Features/home/presintation/view/widgets/custome_book_details_app_bar.dart';
 import 'package:booklyapp/Features/home/presintation/view/widgets/custome_listview_item.dart';
 import 'package:booklyapp/core/utils/style.dart';
+import 'package:booklyapp/core/widget/custom_books_action.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget{
@@ -11,7 +13,7 @@ class BookDetailsViewBody extends StatelessWidget{
     var width =MediaQuery.of(context).size.width;
      var height =MediaQuery.of(context).size.height;
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
+     // crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         const CustomeBookDetailsAppBar(),
         Padding(
@@ -26,10 +28,16 @@ class BookDetailsViewBody extends StatelessWidget{
                    const SizedBox(height: 6,),
                    const Opacity(
                       opacity: 0.7,
-                      child: Text('Rudyard Kipling',style: Style.textstyle20,
+                      child: Text('Rudyard Kipling',style: Style.textstyle18,
                        ),
                     ),
-                    
+                    const SizedBox(height: 10,),
+                     BookRating(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                     ),
+                     const SizedBox(height: 25,),
+                     bookbutton()
+
 
       ],
     );
