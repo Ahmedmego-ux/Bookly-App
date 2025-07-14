@@ -1,44 +1,37 @@
-import 'package:booklyapp/Features/home/presintation/view/widgets/best_seller_listview_item.dart';
 import 'package:booklyapp/Features/search/presentation/views/widgets/custome_search_text_field.dart';
+import 'package:booklyapp/Features/search/presentation/views/widgets/search_result_list_view.dart';
 import 'package:booklyapp/core/utils/style.dart';
 import 'package:flutter/material.dart';
 
-class SearchViewBody extends StatelessWidget{
+class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body: SafeArea(child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+    return Scaffold(
+        body: SafeArea(
+            child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal:20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: customsearchtextfeild(),
         ),
-        const SizedBox(height: 16,),
-         const Padding(
-           padding: EdgeInsets.symmetric(horizontal: 20),
-           child: Text('result',style: Style.textstyle20,),
-         ),
-          const SizedBox(height: 16,),
+        const SizedBox(
+          height: 16,
+        ),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Text(
+            'result',
+            style: Style.textstyle20,
+          ),
+        ),
+        const SizedBox(
+          height: 16,
+        ),
         const Expanded(child: searchresultlistview())
-        ],
-          )) );
-  }
-}
-class searchresultlistview extends StatelessWidget {
-  const searchresultlistview({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: (BuildContext context, int index) 
-      {
-        return BestSellerListviewItem();
-      },
-      
-       
-      )
-    ;
+      ],
+    )));
   }
 }

@@ -4,35 +4,41 @@ import 'package:booklyapp/Features/home/presintation/view/widgets/feature_books_
 import 'package:booklyapp/core/utils/style.dart';
 import 'package:flutter/material.dart';
 
-class HomeViewBody extends StatelessWidget{
+class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
-    
     return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
           child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const AppBarBody(),
-       FeaturedBooksListView(),
-        const SizedBox(height: 50,),
-       const Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 20),
-          child:  Text('Best Seller',style: Style.textstyle18,),
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const AppBarBody(),
+              FeaturedBooksListView(),
+              const SizedBox(
+                height: 50,
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Text(
+                  'Best Seller',
+                  style: Style.textstyle18,
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+            ],
+          ),
         ),
-       const SizedBox(height: 20,),
-      ],
-    ),
-        ),
-       
         const BestSellerListview()
       ],
     );
   }
 }
+
 class BestSellerListview extends StatelessWidget {
   const BestSellerListview({super.key});
 
@@ -41,9 +47,7 @@ class BestSellerListview extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (context, index) => const BestSellerListviewItem(),
-       
       ),
     );
   }
 }
-

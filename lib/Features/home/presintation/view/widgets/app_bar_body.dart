@@ -12,15 +12,23 @@ class AppBarBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
       child: Row(
         children: [
-          SvgPicture.asset(Assetsdata.logo,
-      height:23,width: 30,color: Colors.white,),
-      const Spacer(),
-      IconButton(onPressed: (){
-        GoRouter.of(context).push('/searchview');
-      }, icon: const Icon(FontAwesomeIcons.magnifyingGlass),iconSize: 26,)
+          SvgPicture.asset(
+            Assetsdata.logo,
+            height: 23,
+            width: 30,
+            color: Colors.white,
+          ),
+          const Spacer(),
+          IconButton(
+            onPressed: () {
+              GoRouter.of(context).push('/searchview');
+            },
+            icon: const Icon(FontAwesomeIcons.magnifyingGlass),
+            iconSize: 26,
+          )
         ],
       ),
     );
