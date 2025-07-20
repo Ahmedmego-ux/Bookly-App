@@ -1,4 +1,5 @@
-import 'package:booklyapp/core/utils/assets.dart';
+
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CustomeListViewItem extends StatelessWidget {
@@ -7,17 +8,15 @@ class CustomeListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 5),
+    return ClipRRect(
+      borderRadius:BorderRadius.circular(16) ,
       child: AspectRatio(
         aspectRatio: 1.8 / 2.4,
-        child: Container(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              image:  DecorationImage(
-                fit: BoxFit.fill,
-                image: NetworkImage(imageurl)),
-              )),
+        child:CachedNetworkImage(
+          placeholder: (context, url) =>const CircularProgressIndicator(),
+          errorWidget: (context, url, error) =>const Icon(Icons.error),
+          fit: BoxFit.fill,
+          imageUrl:  imageurl),
         ),
     );
   }
