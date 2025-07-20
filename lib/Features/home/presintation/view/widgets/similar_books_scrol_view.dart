@@ -14,7 +14,9 @@ class similarbookslistview extends StatelessWidget {
             // itemCount: 10,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, Index) {
-              return CustomeListViewItem();
+              return CustomeListViewItem(
+                imageurl: '2wCEAAkGBxISEhUQEhIVFRUVFRcVFRUVFRUVFRUVFRUWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLi0BCgoKDg0OFxAQGisdHR0rLS0tKy0tLS0tLSsrLSsrKy0tLS0tLS0vLSstLS0tLS0tLS0tLS0tLS0rLS0tLS0rLf',
+              );
             }),
       ),
     );
