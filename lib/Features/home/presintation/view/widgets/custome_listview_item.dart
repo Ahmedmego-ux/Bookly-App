@@ -13,7 +13,7 @@ class CustomeListViewItem extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: 1.8 / 2.4,
         child:CachedNetworkImage(
-          placeholder: (context, url) =>const CircularProgressIndicator(),
+          placeholder: (context, url) =>const Center(child:  CircularProgressIndicator()),
           errorWidget: (context, url, error) =>const Icon(Icons.error),
           fit: BoxFit.fill,
           imageUrl:  imageurl),

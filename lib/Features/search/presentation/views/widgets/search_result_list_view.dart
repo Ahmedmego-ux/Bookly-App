@@ -1,3 +1,4 @@
+import 'package:booklyapp/Features/home/data/models/book_model/book_model.dart';
 import 'package:booklyapp/Features/home/presintation/view/widgets/best_seller_listview_item.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +8,9 @@ class searchresultlistview extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) {
-        return BestSellerListviewItem();
+        
+        //const BestSellerListviewItem(,);
+        return Text('data');
       },
     );
   }
