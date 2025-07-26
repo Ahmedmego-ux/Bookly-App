@@ -7,6 +7,6 @@ class CustomeErrorWidget extends StatelessWidget{
   const CustomeErrorWidget({super.key, required this.errmessage});
   @override
   Widget build(BuildContext context) {
-    return Text(errmessage,style: Style.textstyle18,);
+    return Center(child: Text(errmessage,style: Style.textstyle18,textAlign: TextAlign.center,));
   }
 }
