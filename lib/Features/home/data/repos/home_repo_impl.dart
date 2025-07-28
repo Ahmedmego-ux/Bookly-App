@@ -49,7 +49,7 @@ return left(Serverfailure(e.toString())) ;
   @override
   Future<Either<Failure, List<BookModel>>> fetchSimilarBooks({required String categories})async {
     try {
-  var data=await apiService.get(url: 'volumes?Filtering=free-ebooks&q=subject:programming');
+  var data=await apiService.get(url: getcatogry(categories));
   List<BookModel> books=[];
   for (var item in data['items']) {
     books.add(BookModel.fromJson(item));
@@ -63,3 +63,10 @@ return left(Serverfailure(e.toString())) ;
 return left(Serverfailure(e.toString())) ;
 }
   }}
+  String getcatogry(String categories){
+    if(categories==null)
+   { return 'volumes?Filtering=free-ebooks&q=subject:programming';}
+    else{
+      return 'volumes?Filtering=free-ebooks&q=subject:$categories';
+    }
+  }
